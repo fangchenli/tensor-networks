@@ -50,3 +50,38 @@ Run commands in the virtual environment:
 ```bash
 uv run <command>
 ```
+
+### Code Quality Tools
+
+This project uses several tools to maintain code quality:
+
+**Linting and Formatting with Ruff:**
+```bash
+uv run ruff check src/ tests/      # Check for issues
+uv run ruff check --fix src/ tests/  # Auto-fix issues
+uv run ruff format src/ tests/      # Format code
+```
+
+**Type Checking with mypy:**
+```bash
+uv run mypy src/
+```
+
+**Testing with pytest:**
+```bash
+uv run pytest                  # Run all tests
+uv run pytest -v               # Verbose output
+uv run pytest tests/test_file.py  # Run specific test file
+```
+
+**Pre-commit Hooks:**
+
+Pre-commit hooks are configured to run automatically before each commit. To install them:
+```bash
+uv run pre-commit install
+```
+
+To run pre-commit checks manually:
+```bash
+uv run pre-commit run --all-files
+```
